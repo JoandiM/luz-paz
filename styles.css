@@ -1,11 +1,22 @@
 /* Estilos globales */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: "Open Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Puedes cambiarlo a 300, 400, 700 según necesidad */
+    font-style: normal;
     background-color: #000;
     color: #fff;
     margin: 0;
     padding: 0;
 }
+
+.birthstone-regular {
+    font-family: "Birthstone", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  
 .logo {
     width: 80px;
     height: auto;

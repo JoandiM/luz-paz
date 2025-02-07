@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Luz&Paz</title>
+    <title>Luzypazorg</title>
+    <!-- Si está dentro de una carpeta -->
+<link rel="icon" type="image/x-icon" href="images/favicon.ico">
     <!-- Bootstrap CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <!-- AOS CSS -->
@@ -17,6 +18,13 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
   />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Birthstone&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Shadows+Into+Light&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- Barra de Navegación -->
@@ -25,14 +33,14 @@
         <div class="container">
             <div class="d-flex align-items-center animate__animated animate__fadeInRightBig">
                 <image src="images/logo.png" class="rounded mx-auto d-block logo d-none d-lg-inline"></image>
-                <a class="navbar-brand" href="#"> Luz y Paz </a>
+                <a class="navbar-brand birthstone-regular align-middle" href="#">Consejo Mundial de Iglesias </a>
             </div>
             
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <image src="images/logo.png" class="rounded mx-auto d-block logotoggler"></image>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+            <div class="collapse navbar-collapse " id="navbarNav">
+                <ul class="navbar-nav ms-auto animate__animated animate__fadeInDown">
                     <li class="nav-item">
                         <a class="nav-link" href="#inicio"><i class="fas fa-home"></i> Inicio</a>
                     </li>
@@ -126,26 +134,49 @@
             <h2 class="text-gold">Nuestra Historia</h2>
             <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-8">
-                <p class="fs-4">Fundada en 1993, <strong class="text-gold">Concejo Mundial de las Iglesias</strong> nació en Morón, con la visión de ser un faro de fe y esperanza para la comunidad. Desde sus inicios, ha crecido en número y espíritu, ofreciendo un espacio de encuentro, oración y ayuda solidaria. A lo largo de los años, ha sido testigo de innumerables historias de transformación y fe, convirtiéndose en un pilar para quienes buscan fortaleza espiritual. Hoy, sigue expandiendo su misión con actividades comunitarias, encuentros de oración y un fuerte compromiso con el bienestar de su gente.</p>
+                <p class="fs-4 lh-sm">Fundada en 1993, <strong class="text-gold">Concejo Mundial de las Iglesias</strong> nació en Morón, con la visión de ser un faro de fe y esperanza para la comunidad. Desde sus inicios, ha crecido en número y espíritu, ofreciendo un espacio de encuentro, oración y ayuda solidaria. A lo largo de los años, ha sido testigo de innumerables historias de transformación y fe, convirtiéndose en un pilar para quienes buscan fortaleza espiritual. Hoy, sigue expandiendo su misión con actividades comunitarias, encuentros de oración y un fuerte compromiso con el bienestar de su gente.</p>
                 </div>
         </div>
     </div>
 </section>
 
     <!-- Sección de Video -->
-    <section id="video" class="video py-5 bg-light" data-aos="fade-up">
-        <div class="container">
-            <h2 class="text-center mb-4 text-gold">Palabra de esta semana</h2>
-            <div class="ratio ratio-16x9">
-                <iframe src="https://www.youtube.com/embed/lFv9mUX5ZjQ" allowfullscreen></iframe>
+<section id="video" class="video py-5 bg-light" data-aos="fade-up">
+    <div class="container">
+        <h2 class="text-center mb-4 text-gold text-uppercase ">Por si no los viste</h2>
+        <p class="text-center mb-3 text-dark text-uppercase">Luz y Paz en YouTube</p>
+
+        <!-- Video principal -->
+        <div class="ratio ratio-16x9 rounded">
+            <iframe src="https://www.youtube.com/embed/lFv9mUX5ZjQ" allowfullscreen></iframe>
+        </div>
+
+        <!-- Miniaturas en fila -->
+        <div class="row ">
+            <div class="col-md-4 mt-1">
+                <div class="ratio ratio-16x9 rounded">
+                    <iframe src="https://www.youtube.com/embed/uR_evRQKifQ" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-md-4 mt-1">
+                <div class="ratio ratio-16x9 rounded">
+                    <iframe src="https://www.youtube.com/embed/00AnVIDREHc" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div class="col-md-4 mt-1">
+                <div class="ratio ratio-16x9 rounded">
+                    <iframe src="https://www.youtube.com/embed/nj12iCXkm18" allowfullscreen></iframe>
+                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Sección de Ubicación -->
     <section id="ubicacion" class="ubicacion py-5" data-aos="fade-up">
         <div class="container">
-            <h2 class="text-center mb-4 text-gold">Donde nos ubicamos?</h2>
+            <h2 class="text-center mb-4 text-gold text-uppercase ">¿Donde encontrarnos?</h2>
             <div class="mapa">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.1449715638273!2d-68.1986708!3d10.489235899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e80fee7174bdc85%3A0xbf266c648ef65e82!2sIglesi%20luz%20y%20paz%20puerto%20cadello!5e0!3m2!1ses!2sve!4v1738761324178!5m2!1ses!2sve" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
@@ -154,28 +185,28 @@
 
     <!-- Footer -->
     <!-- FOOTER -->
-<footer class="text-center text-gold mt-4" style="background-color: #ffff;">
+<footer class="text-center text-gold mt-4 " style="background-color: #ffff;" data-aos="fade-up">
     <div class="container p-2">
         <!-- Redes Sociales -->
-        <section class="mb-4">
-            <a class="btn btn-outline-dark btn-floating m-1" href="https://facebook.com" role="button"><i class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-outline-dark btn-floating m-1" href="https://twitter.com" role="button"><i class="fab fa-twitter"></i></a>
-            <a class="btn btn-outline-dark btn-floating m-1" href="https://instagram.com" role="button"><i class="fab fa-instagram"></i></a>
-            <a class="btn btn-outline-dark btn-floating m-1" href="https://linkedin.com" role="button"><i class="fab fa-linkedin-in"></i></a>
-            <a class="btn btn-outline-dark btn-floating m-1" href="https://github.com" role="button"><i class="fab fa-github"></i></a>
+        <section class="mb-4 ">
+            <a class="btn btn-outline-dark btn-floating m-1" href="https://www.facebook.com/luzypazorg/?locale=es_LA" role="button" target="_blank"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-outline-dark btn-floating m-1" href="https://www.twitter.com/luzypazorg" role="button" target="_blank"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-outline-dark btn-floating m-1" href="https://www.instagram.com/luzypazorg/?hl=es" role="button" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a class="btn btn-outline-dark btn-floating m-1" href="https://www.youtube.com/@LuzyPazorg" role="button" target="_blank"><i class="fab fa-youtube"></i></a>
+            <!-- <a class="btn btn-outline-dark btn-floating m-1" href="https://github.com" role="button"><i class="fab fa-github"></i></a> -->
         </section>
         <!-- Redes Sociales -->
 
         <!-- Información del Autor -->
-        <section class="mb-4">
+        <!-- <section class="mb-4">
             <p>Creado por <strong>José Angel Diaz</strong></p>
-        </section>
+        </section> -->
         <!-- Información del Autor -->
     </div>
     
     <div class="text-center p-3" style="background-color: #ffff">
         © 2025 Copyright:
-        <a class="text-dark" href="https://example.com/">tu-sitio-web.com</a>
+        <a class="text-dark" href="https://example.com/">Luzypazorg</a>
     </div>
 </footer>
 
