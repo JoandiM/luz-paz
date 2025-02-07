@@ -1,19 +1,25 @@
-// script.js
-document.addEventListener('DOMContentLoaded', function() {
-    // Inicializar AOS
-    AOS.init({
-        duration: 1200,
-    });
+document.addEventListener("DOMContentLoaded", function () {
+    let preloader = document.getElementById("preloader");
+    let contenido = document.getElementById("contenido");
 
-    // Carrusel
-    const carouselItems = document.querySelectorAll('.carousel-item');
-    let currentIndex = 0;
+    window.onload = function () {
+        preloader.classList.add("hidden");
 
-    function showNextItem() {
-        carouselItems[currentIndex].classList.remove('active');
-        currentIndex = (currentIndex + 1) % carouselItems.length;
-        carouselItems[currentIndex].classList.add('active');
-    }
+        setTimeout(() => {
+            preloader.style.display = "none";
+            contenido.style.display = "block";
 
-    setInterval(showNextItem, 5000); // Cambia de imagen cada 5 segundos
+            // 💡 Ahora inicializamos AOS después de que el preloader desaparezca
+            AOS.init({
+                duration: 1000,
+                easing: "ease-in-out",
+                once: true
+            });
+
+            // 🔄 Forzar la actualización por si alguna animación no carga bien
+            setTimeout(() => {
+                AOS.refresh();
+            }, 300);
+        }, 500);
+    };
 });

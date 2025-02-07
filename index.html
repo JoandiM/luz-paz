@@ -27,188 +27,199 @@
 <link href="https://fonts.googleapis.com/css2?family=Birthstone&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Shadows+Into+Light&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Barra de Navegación -->
+     <!-- Spinner de carga -->
+     <div id="preloader">
+        <div class="spinner"></div>
+    </div>
 
-    <nav class="navbar navbar-expand-lg navbar-dark text-white  ">
-        <div class="container">
-            <div class="d-flex align-items-center animate__animated animate__fadeInRightBig">
-                <image src="images/logo.png" class="rounded mx-auto d-block logo d-none d-lg-inline"></image>
-                <a class="navbar-brand birthstone-regular align-middle" href="#">Consejo Mundial de Iglesias </a>
+
+    <div id="contenido" style="display: none;">
+            <!-- Barra de Navegación -->
+
+        <nav class="navbar navbar-expand-lg navbar-dark text-white  ">
+            <div class="container">
+                <div class="d-flex align-items-center animate__animated animate__fadeInRightBig">
+                    <image src="images/logo.png" class="rounded mx-auto d-block logo d-none d-lg-inline"></image>
+                    <a class="navbar-brand birthstone-regular align-middle" href="#">Consejo Mundial de Iglesias </a>
+                </div>
+                
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <image src="images/logo.png" class="rounded mx-auto d-block logotoggler"></image>
+                </button>
+                <div class="collapse navbar-collapse " id="navbarNav">
+                    <ul class="navbar-nav ms-auto animate__animated animate__fadeInDown">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#inicio"><i class="fas fa-home"></i> Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#historia"><i class="fas fa-book"></i> Historia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#video"><i class="fas fa-video"></i> Video</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#ubicacion"><i class="fas fa-map-marker-alt"></i> Ubicación</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <image src="images/logo.png" class="rounded mx-auto d-block logotoggler"></image>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarNav">
-                <ul class="navbar-nav ms-auto animate__animated animate__fadeInDown">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#inicio"><i class="fas fa-home"></i> Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#historia"><i class="fas fa-book"></i> Historia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#video"><i class="fas fa-video"></i> Video</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#ubicacion"><i class="fas fa-map-marker-alt"></i> Ubicación</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- HERO -->
-    <section class="hero text-center d-flex flex-column justify-content-center align-items-center" data-aos="zoom-in">
-        <h1 class="display-4 text-gold">¡Bienvenido al Consejo Mundial de Iglesias!</h1>
-        <p class="lead text-white">Un lugar de fe, esperanza y amor. Cristo te ama y siempre tiene un propósito para ti.</p>
-    </section>
+        </nav>
+
     
-
-    <!-- Carrusel Personalizado -->
-    <!-- Carrusel con Bootstrap -->
-<!-- Carrusel con Bootstrap -->
-
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
-        <!-- Indicadores -->
-        <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
-        </div>
-
-        <!-- Imágenes del carrusel -->
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="images/image1.jpg" class="d-block img-fluid" alt="Imagen 1">
-            </div>
-            <div class="carousel-item">
-                <img src="images/image2.jpg" class="d-block img-fluid" alt="Imagen 2">
-            </div>
-            <div class="carousel-item">
-                <img src="images/image3.jpg" class="d-block img-fluid" alt="Imagen 3">
-            </div>
-        </div>
-
-        <!-- Botones de navegación -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Anterior</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Siguiente</span>
-        </button>
-    </div>
-
-    <section id="pastores" class="pastores py-5 text-center" data-aos="fade-up">
-        <div class="container">
-            <h2 class="text-gold mb-4">Lideres Espirituales</h2>
-            <div class="row justify-content-center">
-                <!-- Card del Pastor -->
-                <div class="col-md-6 col-lg-5 mb-4">
-                    <div class="card pastor-card">
-                        <img src="images/pastor.jpeg" class="card-img-top" alt="Pastor Juan Pérez">
-                        <div class="card-body">
-                            <h5 class="card-title text-gold">Pastor Jesús Jimenez</h5>
-                            <p class="card-text">Líder espiritual con más de 20 años guiando nuestra comunidad en la fe y el amor de Cristo.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card de la Pastora -->
-                <div class="col-md-6 col-lg-5 mb-4">
-                    <div class="card pastor-card">
-                        <img src="images/pastora.jpeg" class="card-img-top" alt="Pastora María López">
-                        <div class="card-body">
-                            <h5 class="card-title text-gold">Pastora Maritha de Jimenez</h5>
-                            <p class="card-text">Misionera y pastora con una gran vocación, dedicando su vida al servicio de Dios y la comunidad.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Sección de Historia -->
-<section id="historia" class="historia text-center d-flex flex-column align-items-center" data-aos="fade-up">
-        <div class="container">
-            <h2 class="text-gold">Nuestra Historia</h2>
-            <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-8">
-                <p class="fs-4 lh-sm">Fundada en 1993, <strong class="text-gold">Concejo Mundial de las Iglesias</strong> nació en Morón, con la visión de ser un faro de fe y esperanza para la comunidad. Desde sus inicios, ha crecido en número y espíritu, ofreciendo un espacio de encuentro, oración y ayuda solidaria. A lo largo de los años, ha sido testigo de innumerables historias de transformación y fe, convirtiéndose en un pilar para quienes buscan fortaleza espiritual. Hoy, sigue expandiendo su misión con actividades comunitarias, encuentros de oración y un fuerte compromiso con el bienestar de su gente.</p>
-                </div>
-        </div>
-    </div>
-</section>
-
-    <!-- Sección de Video -->
-<section id="video" class="video py-5 bg-light" data-aos="fade-up">
-    <div class="container">
-        <h2 class="text-center mb-4 text-gold text-uppercase ">Por si no los viste</h2>
-        <p class="text-center mb-3 text-dark text-uppercase">Luz y Paz en YouTube</p>
-
-        <!-- Video principal -->
-        <div class="ratio ratio-16x9 rounded">
-            <iframe src="https://www.youtube.com/embed/lFv9mUX5ZjQ" allowfullscreen></iframe>
-        </div>
-
-        <!-- Miniaturas en fila -->
-        <div class="row ">
-            <div class="col-md-4 mt-1">
-                <div class="ratio ratio-16x9 rounded">
-                    <iframe src="https://www.youtube.com/embed/uR_evRQKifQ" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="col-md-4 mt-1">
-                <div class="ratio ratio-16x9 rounded">
-                    <iframe src="https://www.youtube.com/embed/00AnVIDREHc" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="col-md-4 mt-1">
-                <div class="ratio ratio-16x9 rounded">
-                    <iframe src="https://www.youtube.com/embed/nj12iCXkm18" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-    <!-- Sección de Ubicación -->
-    <section id="ubicacion" class="ubicacion py-5" data-aos="fade-up">
-        <div class="container">
-            <h2 class="text-center mb-4 text-gold text-uppercase ">¿Donde encontrarnos?</h2>
-            <div class="mapa">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.1449715638273!2d-68.1986708!3d10.489235899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e80fee7174bdc85%3A0xbf266c648ef65e82!2sIglesi%20luz%20y%20paz%20puerto%20cadello!5e0!3m2!1ses!2sve!4v1738761324178!5m2!1ses!2sve" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <!-- FOOTER -->
-<footer class="text-center text-gold mt-4 " style="background-color: #ffff;" data-aos="fade-up">
-    <div class="container p-2">
-        <!-- Redes Sociales -->
-        <section class="mb-4 ">
-            <a class="btn btn-outline-dark btn-floating m-1" href="https://www.facebook.com/luzypazorg/?locale=es_LA" role="button" target="_blank"><i class="fab fa-facebook-f"></i></a>
-            <a class="btn btn-outline-dark btn-floating m-1" href="https://www.twitter.com/luzypazorg" role="button" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a class="btn btn-outline-dark btn-floating m-1" href="https://www.instagram.com/luzypazorg/?hl=es" role="button" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a class="btn btn-outline-dark btn-floating m-1" href="https://www.youtube.com/@LuzyPazorg" role="button" target="_blank"><i class="fab fa-youtube"></i></a>
-            <!-- <a class="btn btn-outline-dark btn-floating m-1" href="https://github.com" role="button"><i class="fab fa-github"></i></a> -->
+        
+        <!-- HERO -->
+        <section class="hero text-center d-flex flex-column justify-content-center align-items-center" data-aos="zoom-in">
+            <h1 class="display-4 text-gold">¡Bienvenido al Consejo Mundial de Iglesias!</h1>
+            <p class="lead text-white">Un lugar de fe, esperanza y amor. Cristo te ama y siempre tiene un propósito para ti.</p>
         </section>
-        <!-- Redes Sociales -->
+        
 
-        <!-- Información del Autor -->
-        <!-- <section class="mb-4">
-            <p>Creado por <strong>José Angel Diaz</strong></p>
-        </section> -->
-        <!-- Información del Autor -->
+        <!-- Carrusel Personalizado -->
+        <!-- Carrusel con Bootstrap -->
+    <!-- Carrusel con Bootstrap -->
+
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <!-- Imágenes del carrusel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/image1.jpg" class="d-block img-fluid" alt="Imagen 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/image2.jpg" class="d-block img-fluid" alt="Imagen 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/image3.jpg" class="d-block img-fluid" alt="Imagen 3">
+                </div>
+            </div>
+
+            <!-- Botones de navegación -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Siguiente</span>
+            </button>
+        </div>
+
+        <section id="pastores" class="pastores py-5 text-center" data-aos="fade-up">
+            <div class="container">
+                <h2 class="text-gold mb-4">Lideres Espirituales</h2>
+                <div class="row justify-content-center">
+                    <!-- Card del Pastor -->
+                    <div class="col-md-6 col-lg-5 mb-4">
+                        <div class="card pastor-card">
+                            <img src="images/pastor.jpeg" class="card-img-top" alt="Pastor Juan Pérez">
+                            <div class="card-body">
+                                <h5 class="card-title text-gold">Pastor Jesús Jimenez</h5>
+                                <p class="card-text">Líder espiritual con más de 20 años guiando nuestra comunidad en la fe y el amor de Cristo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card de la Pastora -->
+                    <div class="col-md-6 col-lg-5 mb-4">
+                        <div class="card pastor-card">
+                            <img src="images/pastora.jpeg" class="card-img-top" alt="Pastora María López">
+                            <div class="card-body">
+                                <h5 class="card-title text-gold">Pastora Maritha de Jimenez</h5>
+                                <p class="card-text">Misionera y pastora con una gran vocación, dedicando su vida al servicio de Dios y la comunidad.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección de Historia -->
+    <section id="historia" class="historia text-center d-flex flex-column align-items-center" data-aos="fade-up">
+            <div class="container">
+                <h2 class="text-gold">Nuestra Historia</h2>
+                <div class="row justify-content-center">
+                    <div class="col-md-10 col-lg-8">
+                    <p class="fs-4 lh-sm">Fundada en 1993, <strong class="text-gold">Concejo Mundial de las Iglesias</strong> nació en Morón, con la visión de ser un faro de fe y esperanza para la comunidad. Desde sus inicios, ha crecido en número y espíritu, ofreciendo un espacio de encuentro, oración y ayuda solidaria. A lo largo de los años, ha sido testigo de innumerables historias de transformación y fe, convirtiéndose en un pilar para quienes buscan fortaleza espiritual. Hoy, sigue expandiendo su misión con actividades comunitarias, encuentros de oración y un fuerte compromiso con el bienestar de su gente.</p>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- Sección de Video -->
+    <section id="video" class="video py-5 bg-light" data-aos="fade-up">
+        <div class="container">
+            <h2 class="text-center mb-4 text-gold text-uppercase ">Por si no los viste</h2>
+            <p class="text-center mb-3 text-dark text-uppercase">Luz y Paz en YouTube</p>
+
+            <!-- Video principal -->
+            <div class="ratio ratio-16x9 rounded">
+                <iframe src="https://www.youtube.com/embed/lFv9mUX5ZjQ" allowfullscreen></iframe>
+            </div>
+
+            <!-- Miniaturas en fila -->
+            <div class="row ">
+                <div class="col-md-4 mt-1">
+                    <div class="ratio ratio-16x9 rounded">
+                        <iframe src="https://www.youtube.com/embed/uR_evRQKifQ" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-1">
+                    <div class="ratio ratio-16x9 rounded">
+                        <iframe src="https://www.youtube.com/embed/00AnVIDREHc" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-1">
+                    <div class="ratio ratio-16x9 rounded">
+                        <iframe src="https://www.youtube.com/embed/nj12iCXkm18" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        <!-- Sección de Ubicación -->
+        <section id="ubicacion" class="ubicacion py-5" data-aos="fade-up">
+            <div class="container">
+                <h2 class="text-center mb-4 text-gold text-uppercase ">¿Donde encontrarnos?</h2>
+                <div class="mapa">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3923.1449715638273!2d-68.1986708!3d10.489235899999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e80fee7174bdc85%3A0xbf266c648ef65e82!2sIglesi%20luz%20y%20paz%20puerto%20cadello!5e0!3m2!1ses!2sve!4v1738761324178!5m2!1ses!2sve" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <!-- FOOTER -->
+    <footer class="text-center text-gold mt-4 " style="background-color: #ffff;" data-aos="fade-up">
+        <div class="container p-2">
+            <!-- Redes Sociales -->
+            <section class="mb-4 ">
+                <a class="btn btn-outline-dark btn-floating m-1" href="https://www.facebook.com/luzypazorg/?locale=es_LA" role="button" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn btn-outline-dark btn-floating m-1" href="https://www.twitter.com/luzypazorg" role="button" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a class="btn btn-outline-dark btn-floating m-1" href="https://www.instagram.com/luzypazorg/?hl=es" role="button" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a class="btn btn-outline-dark btn-floating m-1" href="https://www.youtube.com/@LuzyPazorg" role="button" target="_blank"><i class="fab fa-youtube"></i></a>
+                <!-- <a class="btn btn-outline-dark btn-floating m-1" href="https://github.com" role="button"><i class="fab fa-github"></i></a> -->
+            </section>
+            <!-- Redes Sociales -->
+
+            <!-- Información del Autor -->
+            <!-- <section class="mb-4">
+                <p>Creado por <strong>José Angel Diaz</strong></p>
+            </section> -->
+            <!-- Información del Autor -->
+        </div>
+        
+        <div class="text-center p-3" style="background-color: #ffff">
+            © 2025 Copyright:
+            <a class="text-dark" href="https://example.com/">Luzypazorg</a>
+        </div>
+    </footer>
     </div>
-    
-    <div class="text-center p-3" style="background-color: #ffff">
-        © 2025 Copyright:
-        <a class="text-dark" href="https://example.com/">Luzypazorg</a>
-    </div>
-</footer>
 
     <!-- Bootstrap JS y dependencias -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -217,20 +228,7 @@
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     
     <!-- Script personalizado -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Inicializar AOS
-            AOS.init({
-                duration: 1000,
-            easing: "ease-in-out",
-            once: true
-            });
-        });
-        
-
-
-
-    </script>
+    <script src="script.js"></script>
     
    
 </body>
