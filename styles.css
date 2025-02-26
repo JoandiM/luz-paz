@@ -1,56 +1,187 @@
+/* Variables para los colores */
+:root {
+    --bg-color-light: #fff; /* Fondo blanco para el modo claro */
+    --bg-color-dark: #121212; /* Fondo negro para el modo oscuro */
+    --text-color-light: #000; /* Texto negro en modo claro */
+    --text-color-dark: #fff; /* Texto blanco en modo oscuro */
+    --btn-bg-light: #ffd700;
+    --btn-bg-dark: #333;
+    --btn-text-light: #000;
+    --btn-text-dark: #ffd700;
+    --gold-color: #d4af37;
+    --navbar-bg-light: #fff; /* Blanco para el navbar en modo claro */
+    --navbar-bg-dark: #002f6c; /* Azul marino para el navbar en modo oscuro */
+    --hero-bg-light: #fff; /* Blanco para el hero en modo claro */
+    --hero-bg-dark: #002f6c; /* Azul marino para el hero en modo oscuro */
+    --li-color-light: #000; /* Negro para los enlaces en modo claro */
+    --li-color-dark: #ffd700; /* Dorado para los enlaces en modo oscuro */
+    --footer-bg-light: #fff; /* Fondo blanco para el footer en modo claro */
+    --footer-bg-dark: #222; /* Fondo gris oscuro para el footer en modo oscuro */
+    --footer-text-color-light: #000; /* Texto negro para el footer en modo claro */
+    --footer-text-color-dark: #ffd700; /* Texto dorado para el footer en modo oscuro */
+    --footer-btn-border: #ffd700; /* Borde del botón en el footer */
+    --footer-btn-color: #ffd700; /* Color del texto del botón en el footer */
+    --footer-btn-hover-color: #fff; /* Color del texto del botón al pasar el cursor */
+    --footer-btn-hover-border: #fff; /* Borde del botón al pasar el cursor */
+}
+
 /* Estilos globales */
 body {
-    font-family: "Open Sans", sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-optical-sizing: auto;
-    font-weight: 400; /* Puedes cambiarlo a 300, 400, 700 según necesidad */
+    font-weight: 300;
     font-style: normal;
-    background-color: #000;
-    color: #fff;
     margin: 0;
     padding: 0;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    transition: background-color 0.3s, color 0.3s; /* Transición suave */
 }
 
-.birthstone-regular {
-    font-family: "Birthstone", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
-  
-.logo {
-    width: 80px;
-    height: auto;
-    object-fit: contain; /* Asegura que la imagen se ajuste sin deformarse */
-    display: block;
-    margin: 0 auto;
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
 }
 
-.logotoggler {
+/* Logo */
+.logo, .logotoggler {
     width: 50px;
     height: auto;
-    object-fit: contain; /* Asegura que la imagen se ajuste sin deformarse */
+    object-fit: contain;
     display: block;
     margin: 0 auto;
 }
-/* Estilo para la barra de navegación */
+
+
+/* Estilos generales para el modo oscuro */
+.dark-mode {
+    background-color: #121212; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+}
+
+/* Cambios específicos para el modo oscuro */
+.dark-mode .navbar {
+    background-color: #1a1a1a; /* Azul marino oscuro para el nav */
+    color: #fff; /* Color de texto blanco en el nav */
+}
+
+.dark-mode .hero {
+    background-color: #1a1a1a; /* Azul marino oscuro para el hero */
+    color: #fff; /* Texto blanco en el hero */
+}
+
+.dark-mode .navbar-nav .nav-link, 
+.dark-mode .navbar-brand {
+    color: #ffd700; /* Color dorado para los links */
+}
+
+.dark-mode .navbar-nav .nav-link:hover {
+    color: #f4c300; /* Color dorado más brillante al pasar el cursor */
+}
+
+.dark-mode .text-gold {
+    color: #ffd700; /* Dorado */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Sombra sutil para mejorar la visibilidad */
+}
+
+.dark-mode .card, 
+.dark-mode .pastor-card {
+    background-color: #222; /* Fondo oscuro para las tarjetas */
+    color: #fff; /* Texto blanco en las tarjetas */
+}
+
+.dark-mode .pastor-card:hover {
+    transform: scale(1.05); /* Efecto de hover */
+}
+
+.dark-mode .pastor-card img {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+/* Fondo negro para el preloader */
+.dark-mode #preloader {
+    background: rgba(0, 0, 0, 0.8); /* Fondo más oscuro */
+}
+
+/* Para el hero y otras secciones */
+.dark-mode .hero h1, 
+.dark-mode .hero p {
+    color: #fff; /* Texto blanco en el hero */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7); /* Sombra oscura para mejorar la visibilidad */
+}
+
+/* Cambios para el contenido en modo oscuro */
+.dark-mode .historia, 
+.dark-mode .video, 
+.dark-mode .ubicacion {
+    background-color: #121212; /* Fondo negro para las secciones */
+    color: #fff; /* Texto blanco en las secciones */
+}
+
+.dark-mode .mapa iframe {
+    border: none;
+    background-color: #222; /* Fondo gris oscuro para el mapa */
+}
+
+/* Ajustes en los links */
+.dark-mode .navbar-nav .nav-link {
+    color: #fff; /* Blanco para los links */
+}
+
+.dark-mode .navbar-nav .nav-link:hover {
+    color: #ffd700; /* Dorado en hover */
+}
+
+/* Navbar y Hero */
 .navbar {
-    background-color: #000; /* Fondo oscuro */
-    color: #fff;
+    background-color: var(--navbar-bg-light);
+    color: var(--text-color-light) !important;
+    padding: 1rem 0;
 }
 
-/* Íconos en la barra de navegación */
-.navbar-nav .nav-link i {
-    margin-right: 8px; /* Espacio entre ícono y texto */
+.dark-mode .navbar,
+.dark-mode .hero {
+    background-color: var(--navbar-bg-dark); /* Azul marino en el navbar en modo oscuro */
 }
 
-/* Resaltar los íconos cuando se pasa el ratón por encima */
-.navbar-nav .nav-link:hover {
-    color: #d4af37; /* Color dorado al hacer hover */
+.hero {
+    background-color: var(--hero-bg-light);
+    color: var(--text-color-light) ;
+    height: 25vh;
+    padding: 1rem;
 }
+
+/* Estilos para los enlaces (li) */
+.navbar-nav .nav-link,
+.navbar-brand,
+.navbar-nav li {
+    color: var(--li-color-light);
+    transition: color 0.3s ease;
+}
+
+.dark-mode .navbar-nav .nav-link,
+.dark-mode .navbar-brand,
+.dark-mode .navbar-nav li {
+    color: var(--li-color-dark); /* Texto dorado para los enlaces en modo oscuro */
+}
+
+/* Botón de cambio de tema */
+#theme-toggle {
+    background-color: var(--btn-bg-light);
+    color: var(--btn-text-light);
+    border: none;
+    transition: 0.3s;
+}
+
+#theme-toggle:hover {
+    opacity: 0.8;
+}
+
 /* Color dorado para textos */
 .text-gold {
-    color: #d4af37;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    color: var(--gold-color);
+    text-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.2); /* Menos sombra y más sutil */
 }
 
 /* Estilos para las secciones */
@@ -59,13 +190,13 @@ body {
 }
 
 .historia h2, .video h2, .ubicacion h2 {
-    color: #d4af37;
+    color: var(--gold-color);
     margin-bottom: 2rem;
 }
 
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
     max-width: 100%;
@@ -86,17 +217,18 @@ body {
 }
 
 .hero {
-    height: 25vh; /* Reduce la altura en pantallas pequeñas */
+    height: 25vh;
     padding: 1rem;
 }
 
 .hero h1 {
-    font-size: 2rem; /* Reduce el tamaño del título */
+    font-size: 2rem;
 }
 
 .hero p {
-    font-size: 1rem; /* Ajusta el tamaño del texto */
+    font-size: 1rem;
 }
+
 .carousel img {
     width: 100%;
     height: auto;
@@ -112,23 +244,27 @@ img {
 
 /* Sección de Pastores */
 .pastores {
-    background-color: #fff; /* Fondo oscuro */
+    background-color: var(--bg-color-light);
+}
+.dark-mode .pastores {
+    background-color: var(--bg-color-dark);
 }
 
-/* Tarjetas de los pastores */
 .pastor-card {
-    background-color: #222; /* Fondo oscuro para las tarjetas */
+    background-color: #222;
     color: white;
     border-radius: 15px;
     overflow: hidden;
     transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos dentro de la tarjeta se alineen correctamente */
+    height: 100%;
 }
 
 .pastor-card:hover {
     transform: scale(1.05);
 }
 
-/* Imágenes dentro de las tarjetas */
 .pastor-card img {
     width: 100%;
     height: 350px;
@@ -137,108 +273,343 @@ img {
     border-top-right-radius: 15px;
 }
 
-/* Estilos para el preloader */
-#preloader {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background: rgba(68, 67, 67, 0.5); /* Fondo gris con opacidad */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    opacity: 1;
-    transition: opacity 0.5s ease-out;
+#pastorModalImg {
+    transition: opacity 0.8s ease-in-out;
+    opacity: 0;
 }
 
-/* Spinner animado */
-.spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid rgba(0, 0, 0, 0.1);
-    border-top-color: #ffcc00; /* Color del spinner */
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+#pastorModalImg.loaded {
+    opacity: 1;
 }
+
+.modal-body img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Preloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+}
+
+.spinner-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+}
+
+.preloader-logo {
+    width: 80px;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.spinner {
+    width: 120px;
+    height: 120px;
+    border: 5px solid rgba(0, 0, 0, 0.1);
+    border-top: 5px solid #ffcc00;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 1s linear infinite;
+    z-index: 1;
+}
+
+
+
 .hidden {
     opacity: 1;
     pointer-events: none;
 }
 
-/* Animación del spinner */
+/* Estilos generales para el footer */
+.footer {
+    padding: 2rem 0;
+    background-color: var(--footer-bg-light); /* Fondo por defecto en modo claro */
+    color: var(--footer-text-color-light); /* Color del texto por defecto en modo claro */
+    font-size: 1rem;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s; /* Transición suave para cambio de color */
+}
+
+.footer .container {
+    padding: 1rem;
+}
+
+.footer .btn-outline-dark {
+    border-color: var(--footer-btn-border);
+    color: var(--footer-btn-color);
+    transition: color 0.3s, border-color 0.3s;
+}
+
+.footer .btn-outline-dark:hover {
+    color: var(--footer-btn-hover-color);
+    border-color: var(--footer-btn-hover-border);
+}
+
+.footer .text-dark {
+    color: var(--footer-text-color-light);
+}
+
+/* Cambios específicos para el modo oscuro */
+.dark-mode .footer {
+    background-color: var(--footer-bg-dark); /* Fondo oscuro en el footer en modo oscuro */
+    color: var(--footer-text-color-dark); /* Texto dorado en el footer en modo oscuro */
+}
+
+.dark-mode .footer .btn-outline-dark {
+    border-color: var(--footer-btn-border);
+    color: var(--footer-btn-color);
+}
+
+.dark-mode .footer .btn-outline-dark:hover {
+    color: var(--footer-btn-hover-color);
+    border-color: var(--footer-btn-hover-border);
+}
+
+.dark-mode .footer .text-dark {
+    color: var(--footer-text-color-dark);
+}
+
+.dark-mode .footer a {
+    color: var(--footer-text-color-dark);
+}
+
+.modal-body {
+    max-height: 400px;
+    overflow-y: scroll;
+}
+.search-results {
+    margin-top: 20px;
+}
+
+/* Estilos para las tarjetas de sedes */
+.sede-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 20px;
+    cursor: pointer; /* Cambia el cursor al pasar sobre la tarjeta */
+}
+
+.sede-card:hover {
+    transform: scale(1.05);
+}
+
+.sede-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.sede-card .card-body {
+    padding: 15px;
+}
+
+.sede-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.sede-card p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Estilos para el modal */
+.modal-body img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+/* Estilos para el reproductor de radio */
+.radio-player {
+    position: fixed;
+    top: -300px; /* Oculto inicialmente */
+    right: 20px;
+    width: 300px;
+    background: rgba(0, 0, 0, 0.9);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+    transition: top 0.5s ease-in-out;
+    z-index: 9999; /* Para que esté por encima de otros elementos */
+    color: #fff;
+}
+
+.radio-player.show-player {
+    top: 60px; /* Ajusta la altura según sea necesario */
+}
+
+.radio-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.radio-header h5 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.radio-header .btn-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.radio-body {
+    text-align: center;
+}
+
+/* Ocultar elementos no deseados del widget de Zeno.fm */
+#zenoWidget {
+    border: none;
+    border-radius: 10px;
+}
+
+/* Ocultar controles no deseados */
+#zenoWidget {
+    filter: grayscale(100%) opacity(0.8); /* Opcional: Dar un estilo diferente */
+}
+
+.zeno-player {
+    border: none; /* Eliminar el borde */
+    height: 200px; /* Ajustar la altura para mostrar solo la barra de reproducción */
+    width: 280px; /* Ajustar el ancho */
+    overflow: hidden; /* Ocultar el contenido que sobresale */
+}
+
+.stat-card{
+    background-color: #f0efef
+}
+.dark-mode .stat-card{
+    background-color: #002f6c; /* Fondo oscuro para las tarjetas */
+    color: #ffd700; /* Texto blanco en las tarjetas */
+}
+.sede-card{
+    background-color: #f0efef;
+    
+    
+}
+.dark-mode .sede-card{
+    background-color: #585656; /* Fondo oscuro para las tarjetas */
+    
+}
+
+.dark-mode .sede-card p{
+    color: #f1ecec; /* Fondo oscuro para las tarjetas */
+
+}
+
 @keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
     to {
-        transform: rotate(360deg);
+        transform: translate(-50%, -50%) rotate(360deg);
     }
 }
 
-
-
-/* Estilos responsivos para diferentes tamaños de pantalla */
+/* Estilos responsivos */
 @media (max-width: 1200px) {
-    /* Pantallas grandes, como laptops */
     .historia, .video, .ubicacion {
         padding: 3rem 0;
     }
-
-   
 }
 
 @media (max-width: 992px) {
-    /* Pantallas de tablets grandes */
     .historia, .video, .ubicacion {
         padding: 3rem 0;
     }
-
-   
 }
 
 @media (max-width: 768px) {
-    /* Pantallas medianas (tabletas, móviles grandes) */
     .historia, .video, .ubicacion {
         padding: 2rem 0;
     }
 
     .navbar-toggler {
-        border-color: #d4af37; /* Color dorado en el borde del botón */
+        border-color: var(--gold-color);
     }
 
     .navbar-toggler-icon {
-        background-color: #d4af37; /* Color dorado para el ícono de hamburguesa */
+        background-color: var(--gold-color);
     }
 
     .mapa iframe {
-        height: 350px; /* Ajuste de altura en pantallas medianas */
+        height: 350px;
     }
 
     .pastor-card img {
-        height: 280px; /* Reduce la altura de la imagen */
+        height: 280px;
     }
-    
+
     .pastor-card {
         margin-bottom: 1rem;
+    }
+    .radio-player {
+        width: 95%; /* Ocupa casi todo el ancho en móviles */
+        right: 10px; /* Menos margen en móviles */
+        padding: 10px; /* Menos padding en móviles */
+    }
+
+    .radio-player.show-player {
+        top: 10px; /* Menos espacio en la parte superior en móviles */
+    }
+
+    #zenoWidget {
+        height: 100px; /* Altura reducida para móviles */
+    }
+
+    .radio-header h5 {
+        font-size: 1rem; /* Tamaño de fuente más pequeño en móviles */
+    }
+
+    .radio-header .btn-close {
+        font-size: 1rem; /* Tamaño de fuente más pequeño en móviles */
     }
 }
 
 @media (max-width: 480px) {
-    /* Pantallas pequeñas (móviles) */
     body {
-        font-size: 14px; /* Reducir el tamaño de la fuente */
+        font-size: 14px;
     }
 
     .historia, .video, .ubicacion {
-        padding: 1.5rem 0; /* Menos espacio en pantallas pequeñas */
+        padding: 1.5rem 0;
     }
 
     .carousel img {
-        height: 35vh; /* Ajuste de altura en pantallas pequeñas */
+        height: 35vh;
     }
 
     .mapa iframe {
-        height: 250px; /* Ajuste de altura en pantallas pequeñas */
+        height: 250px;
     }
 
-    /* Ajustar márgenes y espaciado en elementos */
     .navbar-brand, .navbar-nav a {
         font-size: 16px;
     }
@@ -247,16 +618,30 @@ img {
         width: 100%;
         height: 100%;
     }
+    .radio-player {
+        width: 100%; /* Ocupa todo el ancho en móviles pequeños */
+        right: 0; /* Sin margen en móviles pequeños */
+        border-radius: 0; /* Sin bordes redondeados en móviles pequeños */
+    }
+
+    .radio-player.show-player {
+        top: 0; /* Sin espacio en la parte superior en móviles pequeños */
+    }
+
+    #zenoWidget {
+        height: 80px; /* Altura aún más reducida para móviles pequeños */
+    }
+
 }
 
 @media (max-width: 300px) {
-    /* Pantallas muy pequeñas (dispositivos de baja resolución) */
     body {
         font-size: 12px;
     }
-
 
     .mapa iframe {
         height: 200px;
     }
 }
+
+

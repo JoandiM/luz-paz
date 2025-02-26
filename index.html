@@ -13,70 +13,88 @@
     <!-- AOS CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <!-- Estilos personalizados -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- <link rel="stylesheet" href="{{ asset ('./resources/styles.css' ) }}"> -->
     <link
     rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Birthstone&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Shadows+Into+Light&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos personalizados -->
+  <link rel="stylesheet" href="styles.css">
+
+
 </head>
 <body>
      <!-- Spinner de carga -->
      <div id="preloader">
+        <div class="spinner-container">
         <div class="spinner"></div>
+            <image id="spiner" src="images/LogoNegativo.svg" class="preloader-logo rounded mx-auto" loading="lazy"></image>       
+    </div>
     </div>
 
 
     <div id="contenido" style="display: none;">
             <!-- Barra de Navegación -->
 
-        <nav class="navbar navbar-expand-lg navbar-dark text-white  ">
-            <div class="container">
-                <div class="d-flex align-items-center animate__animated animate__fadeInRightBig">
-                    <image src="images/logo.png" class="rounded mx-auto d-block logo d-none d-lg-inline"></image>
-                    <a class="navbar-brand birthstone-regular align-middle" href="#">Consejo Mundial de Iglesias </a>
+            <nav class="navbar navbar-expand-lg text-white" id="navbar">
+                <div class="container">
+                    <div class="d-flex align-items-center animate__animated animate__fadeInRightBig">
+                        <img id="logo" src="images/logo.png" class="rounded mx-auto d-block logo d-none d-lg-inline" loading="lazy">
+                        <a class="navbar-brand poppins-regular align-middle" href="#" >Consejo de Iglesias</a>
+                    </div>
+                    
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <img id="logotoggler" src="" class="rounded mx-auto d-block logotoggler">
+                    </button>
+                    
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav ms-auto animate__animated animate__fadeInDown">
+                            <li class="nav-item"><a class="nav-link" href="#inicio"><i class="fas fa-home"></i> Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#historia"><i class="fas fa-book"></i> Historia</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#video"><i class="fas fa-video"></i> Video</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#ubicacion"><i class="fas fa-map-marker-alt"></i> Ubicación</a></li>
+                            <li class="nav-item">
+                                <button id="toggleRadio" class="btn btn-link nav-link">
+                                    <i class="fas fa-headphones"></i> Radio
+                                </button>
+                            </li>
+                        </ul>
+            
+                        <!-- Botón de modo oscuro/claro -->
+                        <button id="theme-toggle" class="btn btn-light ms-3">
+                            <i id="theme-icon" class="fas fa-moon"></i>
+                        </button>
+                    </div>
                 </div>
-                
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <image src="images/logo.png" class="rounded mx-auto d-block logotoggler"></image>
-                </button>
-                <div class="collapse navbar-collapse " id="navbarNav">
-                    <ul class="navbar-nav ms-auto animate__animated animate__fadeInDown">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#inicio"><i class="fas fa-home"></i> Inicio</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#historia"><i class="fas fa-book"></i> Historia</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#video"><i class="fas fa-video"></i> Video</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#ubicacion"><i class="fas fa-map-marker-alt"></i> Ubicación</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
+            </nav>
     
-        
+
+        <!-- Reproductor de Radio Personalizado -->
+        <div id="radioPlayer" class="radio-player hidden-player">
+            <div class="radio-header">
+                <h5>Luz y Paz Radio</h5>
+                <button id="closeRadio" class="btn btn-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="radio-body">
+                <!-- Widget de Zeno.fm -->
+                <iframe class="zeno-player" src="https://zeno.fm/player/luzypaz/" width="100%" height="150" frameborder="0" allow="autoplay"></iframe>
+            </div>
+        </div>
+
+
         <!-- HERO -->
         <section class="hero text-center d-flex flex-column justify-content-center align-items-center" data-aos="zoom-in">
-            <h1 class="display-4 text-gold">¡Bienvenido al Consejo Mundial de Iglesias!</h1>
-            <p class="lead text-white">Un lugar de fe, esperanza y amor. Cristo te ama y siempre tiene un propósito para ti.</p>
+            <h1 class="display-4 text-gold">¡Bienvenido al Consejo de Iglesias!</h1>
+            <p class="lead">Luz y Paz “Casa con diseño familiar”.</p>
         </section>
         
 
-        <!-- Carrusel Personalizado -->
         <!-- Carrusel con Bootstrap -->
-    <!-- Carrusel con Bootstrap -->
 
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
             <!-- Indicadores -->
@@ -89,13 +107,13 @@
             <!-- Imágenes del carrusel -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="images/image1.jpg" class="d-block img-fluid" alt="Imagen 1">
+                    <img src="images/image1.jpg" class="d-block img-fluid" alt="Imagen 2" loading="lazy">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/image2.jpg" class="d-block img-fluid" alt="Imagen 2">
+                    <img src="images/image2.jpg" class="d-block img-fluid" alt="Imagen 2" loading="lazy">
                 </div>
                 <div class="carousel-item">
-                    <img src="images/image3.jpg" class="d-block img-fluid" alt="Imagen 3">
+                    <img src="images/image3.jpg" class="d-block img-fluid" alt="Imagen 3" loading="lazy">
                 </div>
             </div>
 
@@ -110,27 +128,30 @@
             </button>
         </div>
 
+        
         <section id="pastores" class="pastores py-5 text-center" data-aos="fade-up">
             <div class="container">
-                <h2 class="text-gold mb-4">Lideres Espirituales</h2>
+                <h2 class="text-gold mb-4">Líderes Espirituales</h2>
                 <div class="row justify-content-center">
                     <!-- Card del Pastor -->
                     <div class="col-md-6 col-lg-5 mb-4">
-                        <div class="card pastor-card">
-                            <img src="images/pastor.jpeg" class="card-img-top" alt="Pastor Juan Pérez">
+                        <div class="card pastor-card" data-name="Pastor Jesús Jiménez" data-img="images/pastor.jpeg"
+                            data-info="El Pastor Jesús Jiménez ha servido a nuestra comunidad durante más de 20 años, guiándonos en la fe y el amor de Cristo.">
+                            <img src="images/pastor.jpeg" class="card-img-top" alt="Pastor Jesús Jiménez">
                             <div class="card-body">
-                                <h5 class="card-title text-gold">Pastor Jesús Jimenez</h5>
-                                <p class="card-text">Líder espiritual con más de 20 años guiando nuestra comunidad en la fe y el amor de Cristo.</p>
+                                <h5 class="card-title text-gold">Pastor Jesús Jiménez</h5>
+                                <p class="card-text">Líder espiritual con más de 20 años guiando nuestra comunidad.</p>
                             </div>
                         </div>
                     </div>
                     <!-- Card de la Pastora -->
                     <div class="col-md-6 col-lg-5 mb-4">
-                        <div class="card pastor-card">
-                            <img src="images/pastora.jpeg" class="card-img-top" alt="Pastora María López">
+                        <div class="card pastor-card" data-name="Pastora Maritha de Jiménez" data-img="images/pastora.jpeg"
+                            data-info="La Pastora Maritha de Jiménez es una misionera y líder espiritual comprometida con la comunidad.">
+                            <img src="images/pastora.jpeg" class="card-img-top" alt="Pastora Maritha de Jiménez">
                             <div class="card-body">
-                                <h5 class="card-title text-gold">Pastora Maritha de Jimenez</h5>
-                                <p class="card-text">Misionera y pastora con una gran vocación, dedicando su vida al servicio de Dios y la comunidad.</p>
+                                <h5 class="card-title text-gold">Pastora Maritha de Jiménez</h5>
+                                <p class="card-text">Misionera y pastora con gran vocación al servicio de Dios.</p>
                             </div>
                         </div>
                     </div>
@@ -138,6 +159,106 @@
             </div>
         </section>
         
+        <!-- Modal Dinámico -->
+        <div class="modal fade" id="pastorModal" tabindex="-1" aria-labelledby="pastorModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title text-gold text-center" id="pastorModalLabel"></h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body text-center text-dark">
+                <img id="pastorModalImg" src="" alt="" class="img-fluid rounded mx-auto">
+                <p class="mt-3" id="pastorModalInfo"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Modal de Sedes -->
+<div class="modal fade" id="sedeModal" tabindex="-1" aria-labelledby="sedeModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-dark" id="sedeModalLabel">Información de la Sede</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-dark">
+                <h3 id="modalSedeNombre" class="text-center"></h3>
+                <p><strong>Ubicación:</strong> <a id="modalSedeDireccion" target="_blank"></a></p>
+                <h4>Pastores</h4>
+                <div class="row" id="modalPastores"></div>
+                <h4>Horarios</h4>
+                <ul id="modalHorarios"></ul>
+                <h4>Actividades</h4>
+                <div class="row" id="modalActividades"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sección de Sedes -->
+<section id="sedes" class="sedes py-5">
+    <div class="container">
+        <!-- Estadísticas -->
+        <div class="stats text-center mb-5" data-aos="fade-up">
+            <h2 class="text-gold">Estadísticas de Sedes</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-4">
+                    <div class="stat-card p-3 rounded">
+                        <h3 class="text-gold">Total de Sedes</h3>
+                        <p id="totalSedes" class="display-4">0</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card  p-3 rounded">
+                        <h3 class="text-gold">Sedes Nacionales</h3>
+                        <p id="nacionales" class="display-4">0</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-card  p-3 rounded">
+                        <h3 class="text-gold">Sedes Internacionales</h3>
+                        <p id="internacionales" class="display-4">0</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Filtros -->
+        <div class="filters mb-4" data-aos="fade-up">
+            <div class="row">
+                <div class="col-md-6">
+                    <select id="filterType" class="form-control">
+                        <option value="all">Todas las sedes</option>
+                        <option value="nacional">Sedes Nacionales</option>
+                        <option value="internacional">Sedes Internacionales</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <input type="text" id="searchInput" class="form-control" placeholder="Buscar sede...">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Resultados de búsqueda -->
+        <div id="searchResults" class="text-center mb-4" data-aos="fade-up"></div>
+
+        <!-- Tarjetas de Sedes -->
+        <div class="row" id="sedesContainer" data-aos="fade-up">
+            <!-- Las tarjetas se generarán dinámicamente aquí -->
+        </div>
+
+        <!-- Paginador -->
+        <nav aria-label="Paginación de sedes" class="mt-4" data-aos="fade-up">
+            <ul class="pagination justify-content-center" id="pagination">
+                <!-- Los botones de paginación se generarán dinámicamente aquí -->
+            </ul>
+        </nav>
+    </div>
+</section>
+        
+
         <!-- Sección de Historia -->
     <section id="historia" class="historia text-center d-flex flex-column align-items-center" data-aos="fade-up">
             <div class="container">
@@ -151,10 +272,10 @@
     </section>
 
         <!-- Sección de Video -->
-    <section id="video" class="video py-5 bg-light" data-aos="fade-up">
+    <section id="video" class="video py-5 " data-aos="fade-up">
         <div class="container">
             <h2 class="text-center mb-4 text-gold text-uppercase ">Por si no los viste</h2>
-            <p class="text-center mb-3 text-dark text-uppercase">Luz y Paz en YouTube</p>
+            <p class="text-center mb-3 text-gold text-uppercase">Luz y Paz en YouTube</p>
 
             <!-- Video principal -->
             <div class="ratio ratio-16x9 rounded">
@@ -195,7 +316,7 @@
 
         <!-- Footer -->
         <!-- FOOTER -->
-    <footer class="text-center text-gold mt-4 " style="background-color: #ffff;" data-aos="fade-up">
+    <footer class="text-center text-gold mt-4 footer" data-aos="fade-up">
         <div class="container p-2">
             <!-- Redes Sociales -->
             <section class="mb-4 ">
@@ -214,9 +335,9 @@
             <!-- Información del Autor -->
         </div>
         
-        <div class="text-center p-3" style="background-color: #ffff">
+        <div class="text-center p-3">
             © 2025 Copyright:
-            <a class="text-dark" href="https://example.com/">Luzypazorg</a>
+            <a class="text-decoration-none" href="https://example.com/">Luzypazorg</a>
         </div>
     </footer>
     </div>
@@ -226,10 +347,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <!-- AOS JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    
+    <!-- Bootstrap JavaScript and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+     <!-- Chart.js -->
+     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Script personalizado -->
-    <script src="script.js"></script>
-    
+    <!-- <script src=" {{ asset ('./resources/script.js' ) }}"></script> -->
+     <!-- Script personalizado -->
+     <script src="script.js"></script>
    
 </body>
 </html>
